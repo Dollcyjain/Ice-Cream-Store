@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Buy item{% endblock title %}
+{% block body %}
+<div class="container mt-3">
+    <form method="post" action={% block action %}{% endblock action %}>
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
+        </div>
+        <div class="col-md-6">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" name="city">
+        </div>
+        <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <select id="state" class="form-select" name="state">
+                <option selected>Choose...</option>
+                <option>Maharashtra</option>
+                <option>Uttar Pradesh</option>
+                <option>Rajasthan</option>
+                <option>Karnataka</option>
+                <option>Gujrat</option>
+                <option>Andhra Pradesh</option>
+                <option>Tamil Nadu</option>
+                <option>Madhya Pradesh</option>
+                <option>West Bengal</option>
+                <option>Delhi</option>
+                <option>Bihar</option>
+                <option>Kerela</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+                <option>Orissa</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="pay" class="form-label">Pay Amount</label>
+            <input type="text" class="form-control" id="pay" name="pay" value={% block value %}{% endblock value %}>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Liked our Service
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Buy It</button>
+        </div>
+    </form>
+</div>
+
+{% endblock body %}

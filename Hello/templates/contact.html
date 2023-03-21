@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %} {% block body %}
+<div class="cont">
+    <div class="-fluid text-center m-0 mb-0 photo"><img
+            src="https://burst.shopifycdn.com/photos/contact-us-phone.jpg?width=830&format=pjpg&exif=1&iptc=1"></div>
+
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="container">
+            <h3 class="mt-3 feedtext mb-0"><b>Our Contact Number:</b></h3>
+            <h4>&rarr; +91 555-001-7878</h4>
+            <h4>&rarr; +91 1414-000-228</h4>
+            <h3 class="mt-5 mb-0 feedtext"><b>Our Email Address:</b></h3>
+            <h4>&rarr; icecreamstrore1357@gmail.com</h4>
+            <h3 class="my-4 feedtext mb-0"><b>Send your feedback:</b></h3>
+            <div class="form-group mb-2">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name Here" name="name">
+            </div>
+            <div class="form-group mb-2">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address Here">
+            </div>
+            <div class="form-group mb-2">
+                <label for="phone">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Your Phone Number Here">
+            </div>
+            <div class="form-group mb-2">
+                <label for="desc">Feedback</label>
+                <textarea class="form-control" id="desc" rows="3" placeholder="Your Feedback Here"
+                    name="desc"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Submit Feedback</button>
+                </div>
+            </div>
+    </form>
+</div>
+
+</div>
+<hr class="hr">
+
+{% endblock body %}
